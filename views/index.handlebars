@@ -1,0 +1,10 @@
+<p>Index content goes here</p>
+
+{{#each burgers}}
+    {{#if devoured}}
+        <p>devoured burgers go here</p>
+    {{else}}
+        <p>{{this.id}}</p>
+        <p>{{this.burger_name}}</p>
+    {{/if}}
+  {{/each}}
