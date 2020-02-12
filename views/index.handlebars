@@ -5,6 +5,19 @@
         <p>devoured burgers go here</p>
     {{else}}
         <p>{{this.id}}</p>
-        <p>{{this.burger_name}}</p>
+        <p class="burger-text">{{this.burger_name}}</p>
     {{/if}}
   {{/each}}
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="name">Burger Name:</label>
+    <input type="text" id="burger-name" name="name">
+  </div>
+
+  <button id="submit-btn" type="submit">Add Burger</button>
+</form>
+
+

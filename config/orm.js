@@ -14,11 +14,14 @@ const orm = {
             cb(result);
         });
     },
-    insertOne: function() {
-
-    },
-    updateOne: function() {
-
+    insertOne: function(table, tableCol, value, cb) {
+        connection.query("INSERT INTO ?? (??) VALUES(?)", [table, tableCol, value], function(err, result) {
+            if (err) {
+                throw err;
+            }
+            console.log("ORM IS WORKING");
+            cb(result);
+        });
     }
 }
 
