@@ -17,6 +17,12 @@ const burger = {
         orm.updateOne("burgers", setNewValue, matchedCondition, function(res){
             cb(res);
         });
+    },
+    delete: function(condition, cb) {
+        // console.log("Condition sent to burger js: " + condition);
+        orm.deleteOne("burgers", condition, function(res) {
+            cb(res);
+        });
     }
 }
 

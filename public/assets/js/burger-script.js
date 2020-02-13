@@ -1,13 +1,14 @@
-
 $(function() {
 
   let uneatenBurgers = $("#uneaten-burgers").html().trim();
   let eatenBurgers = $("#eaten-burgers").html().trim();
-  // console.log(uneatenBurgers);
+  let meatText = "<h5 class='text-center we-want-meat'><img src='/assets/img/crying-146425_640.png' alt='cry' />We want meat!</h5>";
+
+
   if (!uneatenBurgers) {
-    $("#uneaten-burgers").append("<h5 class='text-center we-want-meat'>We want meat!</h5>")
+    $("#uneaten-burgers").append(meatText)
   } else if (uneatenBurgers && !eatenBurgers) {
-    $("#eaten-burgers").append("<h5 class='text-center we-want-meat'>We want meat!</h5>")
+    $("#eaten-burgers").append(meatText)
   }
 
   $("#submit-btn").on("click", function(event){
@@ -45,4 +46,25 @@ $(function() {
     
 
   });
+
+  $(".delete-btn").on("click", function(event){
+    var id = $(this).data("id");
+
+    console.log(id);
+
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted burger: " + id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+
+
+  });
+
+
+
 });

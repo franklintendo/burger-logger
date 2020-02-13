@@ -30,6 +30,14 @@ const orm = {
 
             cb(result);
         });
+    },
+    deleteOne: function(table, condition, cb) {
+        let queryString = `DELETE FROM ?? WHERE ${condition}`;
+
+        connection.query(queryString, [table], function(err,result) {
+            if (err) throw err;
+            cb(result);
+        })
     }
 }
 

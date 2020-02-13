@@ -3,14 +3,14 @@
   <div id="uneaten-burgers" class="col-6 col-lg-4 pr-0">
     {{#each burgers}}
       {{#unless devoured}}
-          <p class="burger-text py-2 my-0">{{this.burger_name}} <button class="btn devour-btn btn-sm" data-id="{{this.id}}">Devour!</button></p>
+          <p class="burger-text py-2 my-0">{{this.burger_name}} <button class="btn devour-btn btn-sm ml-lg-4" data-id="{{this.id}}">Devour!</button><span class="delete-btn" data-id="{{this.id}}">&#10006;</span></p>
       {{/unless}}
     {{/each}}
   </div>
   <div id="eaten-burgers" class="col-6 col-lg-4 pl-0">
     {{#each burgers}}
       {{#if devoured}}
-          <p class="devoured-text py-2 my-0">{{this.burger_name}}</p>
+          <p class="devoured-text py-2 my-0">{{this.burger_name}} <span class="delete-btn" data-id="{{this.id}}">&#10006;</span></p>
       {{/if}}
     {{/each}}
   </div>  
