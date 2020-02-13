@@ -19,7 +19,15 @@ const orm = {
             if (err) {
                 throw err;
             }
-            console.log("ORM IS WORKING");
+            cb(result);
+        });
+    },
+    updateOne: function(table, setWithThis, whereCondition, cb) {
+        connection.query(`UPDATE ${table} SET ${setWithThis} WHERE ${whereCondition}`, function(err, result) {
+            if (err) {
+                throw err;
+            }
+
             cb(result);
         });
     }

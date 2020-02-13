@@ -11,11 +11,27 @@ $(function() {
       type: "POST",
       data: newBurger
     }).then(function() {
-        console.log("new burger added!")
         location.reload();
       });
 
       $("#burger-name").val(""); 
   });
 
+  $(".devour-btn").on("click", function(event){
+    var id = $(this).data("id");
+    // console.log(id);
+
+    $.ajax(`/api/burgers/${id}`, {
+      type: "PUT",
+      data: {
+        devour: true
+      }
+    }).then(function(){
+      // console.log("Sent to backend");
+      console.log("Devoured:  "+id);
+      location.reload();
+    });
+
+
+  });
 });

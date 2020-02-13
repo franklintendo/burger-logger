@@ -2,10 +2,9 @@
 
 {{#each burgers}}
     {{#if devoured}}
-        <p>devoured burgers go here</p>
+        <p>DEVOURED: {{this.burger_name}}</p>
     {{else}}
-        <p>{{this.id}}</p>
-        <p class="burger-text">{{this.burger_name}}</p>
+        <p class="burger-text">{{this.burger_name}} <button class="devour-btn" data-id="{{this.id}}">Devour!</button></p>
     {{/if}}
   {{/each}}
 

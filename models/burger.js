@@ -7,14 +7,14 @@ const burger = {
         });
     },
     create: function(userBurger, cb) {
-        console.log("Value passed from controller to burger js: " + userBurger);
-        
         orm.insertOne("burgers", "burger_name", userBurger, function(res){
-            // if (err) {
-            //     // console.log(res);
-            //     throw err;
-            // }
-            console.log("BURGER JS IS WORKING");
+            cb(res);
+        });
+    },
+    devour: function(setNewValue, matchedCondition, cb) {
+        // console.log(setNewValue);
+        // console.log(matchedCondition);
+        orm.updateOne("burgers", setNewValue, matchedCondition, function(res){
             cb(res);
         });
     }

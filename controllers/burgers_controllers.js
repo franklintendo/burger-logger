@@ -17,11 +17,25 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
 
-    console.log("Burger Controllers: " + req.body.name);
-
     burger.create(req.body.name, function(result){
-        console.log("Result: " + result);
         res.json({ id: result.insertId });
+    });
+});
+
+router.put("/api/burgers/:id", function(req, res) {
+    // console.log(req.params.id);
+    // console.log(req.body.devour);
+    devouredIsTrue = `devoured = ${req.body.devour}`;
+    atThisId = `id = ${req.params.id}`;
+    
+    // console.log()
+    burger.devour(devouredIsTrue, atThisId, function(result) {
+        if (result.changedRows == 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
     });
 });
   
