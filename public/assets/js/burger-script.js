@@ -1,5 +1,15 @@
 
 $(function() {
+
+  let uneatenBurgers = $("#uneaten-burgers").html().trim();
+  let eatenBurgers = $("#eaten-burgers").html().trim();
+  // console.log(uneatenBurgers);
+  if (!uneatenBurgers) {
+    $("#uneaten-burgers").append("<h5 class='text-center we-want-meat'>We want meat!</h5>")
+  } else if (uneatenBurgers && !eatenBurgers) {
+    $("#eaten-burgers").append("<h5 class='text-center we-want-meat'>We want meat!</h5>")
+  }
+
   $("#submit-btn").on("click", function(event){
     event.preventDefault();
     // console.log($("#burger-name").val().trim());
@@ -32,6 +42,7 @@ $(function() {
       location.reload();
     });
 
+    
 
   });
 });

@@ -1,13 +1,13 @@
 
 <div class="row justify-content-center">
-  <div class="col-6 col-lg-4 pr-0">
+  <div id="uneaten-burgers" class="col-6 col-lg-4 pr-0">
     {{#each burgers}}
       {{#unless devoured}}
           <p class="burger-text py-2 my-0">{{this.burger_name}} <button class="btn devour-btn btn-sm" data-id="{{this.id}}">Devour!</button></p>
       {{/unless}}
     {{/each}}
   </div>
-  <div class="col-6 col-lg-4 pl-0">
+  <div id="eaten-burgers" class="col-6 col-lg-4 pl-0">
     {{#each burgers}}
       {{#if devoured}}
           <p class="devoured-text py-2 my-0">{{this.burger_name}}</p>
