@@ -1,6 +1,6 @@
 # Burger Logger
 
-Link to project: <a href="https://sleepy-ridge-45932.herokuapp.com/" target="_blank" />
+Link to project: <a href="https://sleepy-ridge-45932.herokuapp.com/" target="_blank">Click here</a>
 
 ## Summary
 Burger Logger is a web app that allows a user to "eat da burger." With the app, users can:<br/>
@@ -28,4 +28,4 @@ This app was built in order to showcase my abilities to use MySQL, Node.js, Jque
 - So I can eat them and satisfy both my creative urges and hunger for meat
 ```
 
-Link to project: <a href="https://sleepy-ridge-45932.herokuapp.com/" target="_blank" />
+Link to project:  <a href="https://sleepy-ridge-45932.herokuapp.com/" target="_blank">Click here</a>
